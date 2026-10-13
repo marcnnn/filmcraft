@@ -9,8 +9,10 @@ rust-version.workspace = true
 [lints]
 workspace = true
 
-# Intentionally dependency-free (layer L1): planar `&mut [f32]` slices in, planar slices out.
+# Layer L1: planar `&mut [f32]` slices in, planar slices out. The shared craft-audio-dsp
+# library (craft-libs) is the one allowed dependency.
 [dependencies]
+craft-audio-dsp.workspace = true
 
 [dev-dependencies]
 filmcraft-testkit = { workspace = true }
